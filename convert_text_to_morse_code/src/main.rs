@@ -34,6 +34,16 @@ impl MorseCode for String {
                 'x' | 'X' => vec![Pulse::Long, Pulse::Short, Pulse::Short, Pulse::Long],
                 'y' | 'Y' => vec![Pulse::Long, Pulse::Short, Pulse::Long, Pulse::Long],
                 'z' | 'Z' => vec![Pulse::Long, Pulse::Long, Pulse::Short, Pulse::Short],
+                '1' => vec![Pulse::Short, Pulse::Long, Pulse::Long, Pulse::Long, Pulse::Long],
+                '2' => vec![Pulse::Short, Pulse::Short, Pulse::Long, Pulse::Long, Pulse::Long],
+                '3' => vec![Pulse::Short, Pulse::Short, Pulse::Short, Pulse::Long, Pulse::Long],
+                '4' => vec![Pulse::Short, Pulse::Short, Pulse::Short, Pulse::Short, Pulse::Long],
+                '5' => vec![Pulse::Short, Pulse::Short, Pulse::Short, Pulse::Short, Pulse::Short],
+                '6' => vec![Pulse::Long, Pulse::Short, Pulse::Short, Pulse::Short, Pulse::Short],
+                '7' => vec![Pulse::Long, Pulse::Long, Pulse::Short, Pulse::Short, Pulse::Short],
+                '8' => vec![Pulse::Long, Pulse::Long, Pulse::Long, Pulse::Short, Pulse::Short],
+                '9' => vec![Pulse::Long, Pulse::Long, Pulse::Long, Pulse::Long, Pulse::Short],
+                '0' => vec![Pulse::Long, Pulse::Long, Pulse::Long, Pulse::Long, Pulse::Long],
                 _ => continue
             };
 
@@ -74,7 +84,7 @@ fn print_morse_code(code: &Message) {
 }
 
 fn main() {
-    let message = String::from("Hello").to_morse_code();
+    let message = String::from("Hello etch1000").to_morse_code();
     
     print_morse_code(&message);
 }
